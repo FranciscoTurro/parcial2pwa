@@ -15,7 +15,7 @@ public partial class Materium
 
     public string Turno { get; set; } = null!;
 
-    public decimal ImporteInscripcion { get; set; }
+    public int ImporteInscripcion { get; set; }
 
     public virtual ICollection<Inscripcion> Inscripcions { get; set; } = new List<Inscripcion>();
 }

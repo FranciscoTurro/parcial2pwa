@@ -9,7 +9,7 @@ public partial class Inscripcion
 
     public string Idmateria { get; set; } = null!;
 
-    public DateTime FechaInscripcion { get; set; }
+    public int Abono { get; set; }
 
     public virtual Alumno DnialumnoNavigation { get; set; } = null!;
 

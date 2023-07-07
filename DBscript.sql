@@ -36,7 +36,7 @@ CREATE TABLE [dbo].[Materia](
     [Sede] [varchar](50) NOT NULL,
     [FechaInicio] [date] NOT NULL,
     [Turno] [varchar](10) NOT NULL,
-    [ImporteInscripcion] [decimal](10, 2) NOT NULL,
+    [ImporteInscripcion] [int] NOT NULL,
     CONSTRAINT [PK_Materia] PRIMARY KEY CLUSTERED 
     (
         [ID] ASC
@@ -54,7 +54,7 @@ GO
 CREATE TABLE [dbo].[Inscripcion](
     [DNIAlumno] [varchar](50) NOT NULL,
     [IDMateria] [varchar](10) NOT NULL,
-    [FechaInscripcion] [datetime] NOT NULL,
+	[Abono] [int] NOT NULL,
     CONSTRAINT [PK_Inscripcion] PRIMARY KEY CLUSTERED 
     (
         [DNIAlumno] ASC,
