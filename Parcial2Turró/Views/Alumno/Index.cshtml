@@ -1,7 +1,7 @@
 ﻿@model List<Parcial2Turró.Models.Alumno>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Alumnos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,7 +20,6 @@
         <a class="btn btn-primary" asp-action="Registrar" asp-controller="Alumno">Registrar alumno</a>
     </div>
     <hr />
-
     <table class="table table-striped">
         <thead>
             <tr>
@@ -31,6 +30,7 @@
                 <th>Domicilio</th>
                 <th>Fecha de nacimiento</th>
                 <th>Foto</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>

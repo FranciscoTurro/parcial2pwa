@@ -1,0 +1,45 @@
+﻿@model Parcial2Turró.Models.Materium
+
+@{
+    ViewData["Title"] = "Agregar materia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Agregar" asp-asp-controller="Alumno" method="post" enctype="multipart/form-data">
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Id">ID de la materia</label>
+        <input type="text" class="form-control form-control-sm" asp-for="Id" required />
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Cupo">Cupo</label>
+        <input type="number" class="form-control form-control-sm" asp-for="Cupo" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Sede">Sede</label>
+        <select class="form-select" asp-for="Sede">
+            <option value="Bsas">Buenos Aires</option>
+            <option value="Rsro">Rosario</option>
+            <option value="Crdb">Cordoba</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="FechaInicio">Fecha de inicio</label>
+        <input type="date" class="form-control form-control-sm" asp-for="FechaInicio" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Turno">Turno</label>
+        <select class="form-select" asp-for="Turno">
+            <option value="Mañana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noche">Noche</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="ImporteInscripcion">Importe de inscripción</label>
+        <input type="number" class="form-control form-control-sm" asp-for="ImporteInscripcion" required />
+    </div> 
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Agregar</button>
+        <a class="btn btn-danger" asp-action="Index" asp-controller="Materia">Volver</a>
+    </div>
+</form>

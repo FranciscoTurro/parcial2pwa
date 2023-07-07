@@ -1,0 +1,44 @@
+﻿@model Parcial2Turró.Models.Materium
+@{
+    ViewData["Title"] = "Modificar materia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modificar materia @Model.Id</h1>
+
+<form asp-action="Detalle" asp-asp-controller="Materia" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Cupo">Cupo</label>
+        <input type="number" class="form-control form-control-sm" asp-for="Cupo" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Sede">Sede</label>
+        <select class="form-select" asp-for="Sede">
+            <option value="Bsas">Buenos Aires</option>
+            <option value="Rsro">Rosario</option>
+            <option value="Crdb">Cordoba</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="FechaInicio">Fecha de inicio</label>
+        <input type="date" class="form-control form-control-sm" asp-for="FechaInicio" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="Turno">Turno</label>
+        <select class="form-select" asp-for="Turno">
+            <option value="Mañana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Noche">Noche</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="ImporteInscripcion">Importe de inscripción</label>
+        <input type="number" class="form-control form-control-sm" asp-for="ImporteInscripcion" required />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Agregar</button>
+        <a class="btn btn-danger" asp-action="Index" asp-controller="Materia">Volver</a>
+    </div>
+</form>

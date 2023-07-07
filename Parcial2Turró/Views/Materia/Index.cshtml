@@ -1,0 +1,53 @@
+﻿@model List<Parcial2Turró.Models.Materium>
+
+@{
+    ViewData["Title"] = "Materias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions {
+    public string formatDate(DateTime dateTime)
+    {
+        return dateTime.ToString("dd/MM/yy");
+    }
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Lista de Materias</h4>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-primary" asp-action="Agregar" asp-controller="Materia">Agregar materia</a>
+    </div>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cupo</th>
+                <th>Sede</th>
+                <th>Fecha inicio</th>
+                <th>Turno</th>
+                <th>Importe de inscripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Cupo</td>
+                    <td>@item.Sede</td>
+                    <td>@formatDate(@item.FechaInicio)</td>
+                    <td>@item.Turno</td>
+                    <td>@item.ImporteInscripcion</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Detalle" asp-controller="Materia" asp-route-id=@item.Id>Modificar</a>
+                        <a class="btn btn-danger" asp-action="Eliminar" asp-controller="Materia" asp-route-id=@item.Id>Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

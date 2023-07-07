@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Parcial2Turró.Models;
 
 public partial class Materium
 {
+    [StringLength(maximumLength: 10, MinimumLength = 10, ErrorMessage = "La longitud del campo debe ser de 10 caracteres")]
     public string Id { get; set; } = null!;
 
     public int Cupo { get; set; }
