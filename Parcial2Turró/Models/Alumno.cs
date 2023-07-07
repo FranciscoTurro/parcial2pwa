@@ -18,6 +18,8 @@ public partial class Alumno
 
     public DateTime FechaNacimiento { get; set; }
 
+    public string SituacionBeca { get; set; } = null!;
+
     public string? Foto { get; set; }
 
     public virtual ICollection<Inscripcion> Inscripcions { get; set; } = new List<Inscripcion>();

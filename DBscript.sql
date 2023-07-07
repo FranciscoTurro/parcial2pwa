@@ -14,6 +14,7 @@ CREATE TABLE [dbo].[Alumno](
     [Email] [varchar](255) NOT NULL,
     [Domicilio] [varchar](255) NOT NULL,
     [FechaNacimiento] [date] NOT NULL,
+	[SituacionBeca] [varchar](20) NOT NULL,
     [Foto] [varchar](max) NULL,
     CONSTRAINT [PK_Alumno] PRIMARY KEY CLUSTERED 
     (

@@ -44,6 +44,7 @@ namespace Parcial2Turró.Controllers
             alumnoExistente.Domicilio = alumnoModel.oAlumno.Domicilio;
             alumnoExistente.FechaNacimiento = alumnoModel.oAlumno.FechaNacimiento;
             alumnoExistente.Email = alumnoModel.oAlumno.Email;
+            alumnoExistente.SituacionBeca = alumnoModel.oAlumno.SituacionBeca;
 
             if (fileName != null)
                 alumnoExistente.Foto = fileName;
@@ -77,6 +78,7 @@ namespace Parcial2Turró.Controllers
                 Domicilio = alumnoModel.oAlumno.Domicilio,
                 Email = alumnoModel.oAlumno.Email,
                 FechaNacimiento = alumnoModel.oAlumno.FechaNacimiento,
+                SituacionBeca = alumnoModel.oAlumno.SituacionBeca,
                 Foto = fileName
             };
 

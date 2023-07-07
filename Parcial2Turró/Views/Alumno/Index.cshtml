@@ -29,6 +29,7 @@
                 <th>Email</th>
                 <th>Domicilio</th>
                 <th>Fecha de nacimiento</th>
+                <th>Situacion de beca</th>
                 <th>Foto</th>
                 <th>Acciones</th>
             </tr>
@@ -43,6 +44,7 @@
                     <td>@item.Email</td>
                     <td>@item.Domicilio</td>
                     <td>@formatDate(@item.FechaNacimiento)</td>
+                    <td>@item.SituacionBeca</td>
                     <td><img src="~/images/alumnos/@item.Foto" alt="Foto del alumno" style="width: 60px; height: 75px;"></td>
                     <td>
                         <a class="btn btn-primary" asp-action="Detalle" asp-controller="Alumno" asp-route-dni=@item.Dni>Modificar</a>
