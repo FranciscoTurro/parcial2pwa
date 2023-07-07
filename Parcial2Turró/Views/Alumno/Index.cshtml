@@ -1,0 +1,55 @@
+﻿@model List<Parcial2Turró.Models.Alumno>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@functions {
+    public string formatDate(DateTime dateTime)
+    {
+        return dateTime.ToString("dd/MM/yy");
+    }
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Lista de Alumnos</h4>
+    </div>
+    <div class="card-body">
+        <a class="btn btn-primary" asp-action="Registrar" asp-controller="Alumno">Registrar alumno</a>
+    </div>
+    <hr />
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Domicilio</th>
+                <th>Fecha de nacimiento</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Dni</td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Email</td>
+                    <td>@item.Domicilio</td>
+                    <td>@formatDate(@item.FechaNacimiento)</td>
+                    <td><img src="~/images/alumnos/@item.Foto" alt="Foto del alumno" style="width: 60px; height: 75px;"></td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Detalle" asp-controller="Alumno" asp-route-dni=@item.Dni>Modificar</a>
+                        <a class="btn btn-danger" asp-action="Baja" asp-controller="Alumno" asp-route-dni=@item.Dni>Baja</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

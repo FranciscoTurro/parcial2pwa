@@ -1,0 +1,42 @@
+﻿@model Parcial2Turró.ViewModels.AlumnoVM
+
+@{
+    ViewData["Title"] = "Modificar alumno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Modificar alumno @Model.oAlumno.Dni</h1>
+
+
+<form asp-action="Detalle" asp-asp-controller="Alumno" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="oAlumno.Dni" />
+
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="oAlumno.Apellido">Apellido del alumno</label>
+        <input type="text" class="form-control form-control-sm" asp-for="oAlumno.Apellido" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="oAlumno.Nombre">Nombre del alumno</label>
+        <input type="text" class="form-control form-control-sm" asp-for="oAlumno.Nombre" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="oAlumno.Email">Email del alumno</label>
+        <input type="email" class="form-control form-control-sm" asp-for="oAlumno.Email" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="oAlumno.Domicilio">Domicilio del alumno</label>
+        <input type="text" class="form-control form-control-sm" asp-for="oAlumno.Domicilio" required />
+    </div>
+    <div class="form-group mb-2">
+        <label class="form-label" asp-for="oAlumno.FechaNacimiento">Fecha de nacimiento del alumno</label>
+        <input type="date" class="form-control form-control-sm" asp-for="oAlumno.FechaNacimiento" required />
+    </div>
+    <div class="form-group mb-3">
+        <label class="form-label" asp-for="PhotoPath">Foto del alumno</label>
+        <input type="file" class="form-control" asp-for="PhotoPath" />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Modificar</button>
+        <a class="btn btn-danger" asp-action="Index" asp-controller="Alumno">Volver</a>
+    </div>
+</form>
