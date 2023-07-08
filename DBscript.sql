@@ -54,7 +54,7 @@ GO
 CREATE TABLE [dbo].[Inscripcion](
     [DNIAlumno] [varchar](50) NOT NULL,
     [IDMateria] [varchar](10) NOT NULL,
-	[Abono] [int] NOT NULL,
+	[Abono] [decimal](18, 2) NOT NULL,
     CONSTRAINT [PK_Inscripcion] PRIMARY KEY CLUSTERED 
     (
         [DNIAlumno] ASC,

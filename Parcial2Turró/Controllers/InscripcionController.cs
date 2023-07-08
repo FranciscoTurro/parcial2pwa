@@ -20,8 +20,8 @@ namespace Parcial2Turró.Controllers
             Materium materia = getMateria(inscripcionModel.Idmateria);
 
             //checkeo que el alumno no tenga una inscripcion a esta materia
-            bool isAlreadySignedUp = _context.Inscripcions.Any(i => i.Dnialumno == alumno.Dni && i.Idmateria == materia.Id);
-            if (isAlreadySignedUp)
+            bool alreadySignedUp = _context.Inscripcions.Any(i => i.Dnialumno == alumno.Dni && i.Idmateria == materia.Id);
+            if (alreadySignedUp)
             {
                 //llamo a Index de forma un poco rustica, seria mejor tener una funcion
                 ViewBag.materias = new SelectList(_context.Materia, "Id", "Id");
