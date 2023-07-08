@@ -1,0 +1,33 @@
+﻿@model List<Parcial2Turró.Models.Inscripcion>
+
+@{
+    ViewData["Title"] = "Inscripciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h4>@ViewBag.MateriaId</h4>
+        <p>Ganancia mensual de la materia: $@ViewBag.total</p>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Situacion de beca</th>
+                <th>Abono</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var inscripcion in Model)
+            {
+                <tr>
+                    <td>@inscripcion.DnialumnoNavigation.Nombre</td>
+                    <td>@inscripcion.DnialumnoNavigation.SituacionBeca</td>
+                    <td>@inscripcion.Abono</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

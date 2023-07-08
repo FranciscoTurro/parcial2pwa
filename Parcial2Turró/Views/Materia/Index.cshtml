@@ -43,6 +43,7 @@
                     <td>@item.Turno</td>
                     <td>@item.ImporteInscripcion</td>
                     <td>
+                        <a class="btn btn-success" asp-action="Inscripciones" asp-controller="Materia" asp-route-id=@item.Id>Inscriptos</a>
                         <a class="btn btn-primary" asp-action="Detalle" asp-controller="Materia" asp-route-id=@item.Id>Modificar</a>
                         <a class="btn btn-danger" asp-action="Eliminar" asp-controller="Materia" asp-route-id=@item.Id>Eliminar</a>
                     </td>
