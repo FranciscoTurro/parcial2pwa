@@ -93,6 +93,11 @@ namespace Parcial2Turró.Controllers
         {
             Alumno alumno = getAlumno(dni);
             if (alumno == null) return NotFound();
+
+            //al borrar un alumno tengo que borrar todas sus inscripciones
+            var inscripciones = _context.Inscripcions.Where(i => i.Dnialumno == alumno.Dni);
+            _context.Inscripcions.RemoveRange(inscripciones);
+
             _context.Alumnos.Remove(alumno);
             _context.SaveChanges();
             return RedirectToAction("Index");

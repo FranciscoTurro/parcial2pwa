@@ -20,6 +20,9 @@
                     <option value="">Seleccionar</option>
                 </select>
             </div>
+            <div class="mb-2 errors" style="color:red">
+                <span>@ViewBag.ERROR</span>
+            </div>
             <div class="mb-2">
                 <button class="btn btn-primary" type="submit">Inscribir</button>
                 <a class="btn btn-danger" asp-action="Index" asp-controller="Home">Volver</a>

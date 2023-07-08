@@ -53,6 +53,11 @@ namespace Parcial2Turró.Controllers
         {
             Materium materia = getMateria(id);
             if (materia == null) return NotFound();
+
+            //al borrar una materia tengo que borrar todas sus inscripciones
+            var inscripciones = _context.Inscripcions.Where(i => i.Idmateria == materia.Id);
+            _context.Inscripcions.RemoveRange(inscripciones);
+
             _context.Materia.Remove(materia);
             _context.SaveChanges();
             return RedirectToAction("Index");
